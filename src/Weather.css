@@ -38,3 +38,11 @@
   line-height: 19px;
   list-style: none;
 }
+.Weather .loading {
+  display: block;
+  margin: 0 auto;
+}
+.Weather .loading-text {
+  color: rgb(33, 33, 33);
+  font-weight: bold;
+}
