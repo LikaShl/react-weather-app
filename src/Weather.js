@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { ColorRing } from "react-loader-spinner";
+import FormattedDate from "./FotmattedDate";
 import "./Weather.css";
 
 export default function Weather() {
@@ -14,7 +15,7 @@ export default function Weather() {
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
       description: response.data.weather[0].description,
-      date: "Monday 11.25",
+      date: new Date(response.data.dt * 1000),
     });
   }
 
@@ -42,19 +43,26 @@ export default function Weather() {
         </form>
         <h1>{city}</h1>
         <ul>
-          <li>{weatherData.date}</li>
+          <li>
+            <FormattedDate date={weatherData.date} />
+          </li>
           <li className="text-capitalize">{weatherData.description}</li>
         </ul>
-        <div className="row">
+        <div className="row smt-3">
           <div className="col-6">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-              alt={weatherData.description}
-            />
-            <span className="temperature">
-              {Math.round(weatherData.temperature)}
-            </span>{" "}
-            <span className="units">°C</span>
+            <div className="clearfix">
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                alt={weatherData.description}
+                className="float-left"
+              />
+              <div className="float-left">
+                <span className="temperature">
+                  {Math.round(weatherData.temperature)}
+                </span>{" "}
+                <span clsassName="units">°C</span>
+              </div>
+            </div>
           </div>
           <div className="col-6">
             <ul>
