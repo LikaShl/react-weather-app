@@ -17,14 +17,14 @@ export default function CurrentWeather(props) {
             <li className="text-capitalize">{props.data.description}</li>
           </ul>
         </div>
-        <div className="col-4 d-flex">
+        <div className="col-3 d-flex">
           <WeatherIcon code={props.data.icon} alt={props.data.description} />
           <span className="temperature">
             {Math.round(props.data.temperature)}
           </span>{" "}
           <span className="units">°C</span>
         </div>
-        <div className="col-4">
+        <div className="col-3">
           <ul>
             <li>Humidity: {props.data.humidity}%</li>
             <li>Wind: {Math.round(props.data.wind)} km/h</li>
