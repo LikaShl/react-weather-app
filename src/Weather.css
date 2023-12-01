@@ -5,7 +5,7 @@
   margin: 30px 30px 30px 30px;
 
   border-radius: 4px;
-  color: rgb(135, 135, 135);
+  color: rgb(80, 80, 80);
 }
 .Weather form {
   margin-bottom: 20px;
@@ -18,25 +18,29 @@
   color: rgb(33, 33, 33);
 }
 .Weather h1 {
-  font-size: 24px;
+  font-size: 64px;
   font-weight: 100;
-  line-height: 20px;
-  margin: 20px 0 10px 0;
+  margin: auto 0 auto 0;
+  text-align: center;
+  padding-bottom: 20px;
 }
 .Weather ul {
   margin: 0;
   padding: 0;
 }
-.Weather img {
-  height: 64px;
-  width: 64px;
-  margin-right: 10px;
-  display: inline-block;
+.Weather .time-descr-block {
+  text-align: right;
+  padding-right: 20px;
 }
+.Weather .col-4 {
+  line-height: 1.5;
+  font-size: 18px;
+}
+
 .Weather .temperature {
   font-weight: bold;
-  color: rgb(33, 33, 33);
-  font-size: 64px;
+  color: rgb(61, 34, 34);
+  font-size: 58px;
   line-height: 64px;
   margin-left: 5px;
   font-weight: 400;
@@ -44,17 +48,15 @@
 }
 .Weather .units {
   color: rgb(33, 33, 33);
-  font-size: 16px;
+
   font-weight: 400;
   position: relative;
-  top: -32px;
+  top: 10px;
   margin-left: 5px;
   line-height: 1;
 }
 .Weather li {
-  font-size: 16px;
   font-weight: 100;
-  line-height: 19px;
   list-style: none;
 }
 .Weather .loading {
