@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { ColorRing } from "react-loader-spinner";
 import CurrentWeather from "./CurrentWeather";
+import Forecast from "./Forecast";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -56,6 +57,7 @@ export default function Weather(props) {
           </div>
         </form>
         <CurrentWeather data={weatherData} />
+        <Forecast />
       </div>
     );
   } else {
