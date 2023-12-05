@@ -71,3 +71,8 @@
   color: rgb(33, 33, 33);
   font-weight: bold;
 }
+@media screen and (max-width: 600px) {
+  .Weather {
+    margin: 20px 5px;
+  }
+}
