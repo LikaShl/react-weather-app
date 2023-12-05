@@ -1,5 +1,21 @@
+.Forecast {
+  margin-top: 40px;
+}
+
 .Forecast .forecast-one-day {
   border: solid 1px #dadce0;
   text-align: center;
   padding: 20px 10px;
+}
+.Forecast .forecast-tempreatures {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.Forecast .forecast-humidity {
+  font-size: 16px;
+  padding: 10px 0 10px 0;
+}
+.Forecast .forecast-description {
+  color: #dadce0;
 }

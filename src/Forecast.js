@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ForecastDay from "./ForecastDay";
 import "./Forecast.css";
 import axios from "axios";
@@ -11,25 +11,7 @@ export default function Forecast(props) {
     setLoaded(true);
   }
 
-  if (loaded) {
-    console.log(forecastData);
-    return (
-      <div className="Forecast">
-        <div className="row">
-          {forecastData.map(function (forecastDay, index) {
-            {
-              if (index < 6)
-                return (
-                  <div className="col-2 forecast-one-day">
-                    <ForecastDay data={forecastDay} />
-                  </div>
-                );
-            }
-          })}
-        </div>
-      </div>
-    );
-  } else {
+  function load() {
     const key = "bd79ao40tde3dec118ca46bc3e6dd55f";
     let lon = props.coordinates.lon;
     let lat = props.coordinates.lat;
@@ -37,5 +19,31 @@ export default function Forecast(props) {
     console.log(apiUrl);
     axios.get(apiUrl).then(handleResponse);
     return null;
+  }
+  useEffect(() => {
+    setLoaded(false);
+  }, [props.coordinates]);
+
+  if (loaded) {
+    console.log(forecastData);
+    return (
+      <div className="Forecast">
+        <div className="row">
+          {forecastData.map(function (forecastDay, index) {
+            if (index < 6) {
+              return (
+                <div className="col-2 forecast-one-day">
+                  <ForecastDay data={forecastDay} />
+                </div>
+              );
+            } else {
+              return null;
+            }
+          })}
+        </div>
+      </div>
+    );
+  } else {
+    load();
   }
 }
