@@ -23,12 +23,8 @@
   width: 64px;
   height: 64px;
 }
-@media (max-width: 600px) {
-  .forecast-one-day {
+@media screen and (max-width: 600px) {
+  .Forecast .forecast-one-day {
     font-size: 12px;
-  }
-  .forecast-icon {
-    width: 48px;
-    height: 48px;
   }
 }
