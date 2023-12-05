@@ -1,6 +1,5 @@
 import React from "react";
 import ForecastIcons from "./ForecastIcons";
-import ForecastFormattedDate from "./ForecastFormattedDate";
 
 export default function ForecastDay(props) {
   function maxTemp() {
